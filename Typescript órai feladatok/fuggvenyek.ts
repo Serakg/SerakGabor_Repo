@@ -1,3 +1,6 @@
+export{};
+
+
 // Visszatérési érték és paraméter nélküli eljárás
 
 function ILoveTypeScript():void{
@@ -28,9 +31,3 @@ function RandomGeneralo100Fuggveny():number{
 function NegyzetKeruletFuggveny(a:number):number{
     return 4*a;
 }
-
-// Git push
-// git add .
-// git commit -m "typescript függvények"
-// git pull
-// git push

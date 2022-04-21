@@ -1,3 +1,7 @@
+"use strict";
+exports.__esModule = true;
+
+
 // Visszatérési érték és paraméter nélküli eljárás
 function ILoveTypeScript() {
     document.write("Szeretem a TypeScriptet!");
