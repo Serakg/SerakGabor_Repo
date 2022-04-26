@@ -12,8 +12,22 @@
 
         TeglalapKeruletTerulet(5, 10);
         document.write(ParosE(5) + "<br>");
+        document.write("<hr>");
 
-        document.write(PrimGenerator(1, 20));
+        document.write("A generált prímszám: " + PrimGenerator(1, 20) + "<br>");
+        document.write("<hr>");
+
+        let teglalapEredmenyek = teglalapKeruletTeruletTupleFuggveny(4,5);
+        document.write("A téglalap kerülete: " + teglalapEredmenyek[0] + "<br>");
+        document.write("A téglalap területe: " + teglalapEredmenyek[1] + "<br>");
+
+        document.write("<hr>");
+
+        let generaltTomb = UniverzalisTombGenerator(10, 20, 40);
+        document.write("A generált tömb: " + generaltTomb);
+        document.write("<hr>");
+
+        document.write(OsszegzesTeteleTS(generaltTomb));
 
     </script>
 </body>

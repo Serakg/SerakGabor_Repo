@@ -34,7 +34,7 @@ function PrimGenerator(hatarEgy, hatarKetto) {
         probalkozasokSzama++;
         var oszto = 0;
         for (var i = 1; i < generaltSzam; i++) {
-            if (generaltSzam[i] == 0) {
+            if (generaltSzam % i == 0) {
                 oszto++;
             }
         }
@@ -44,4 +44,25 @@ function PrimGenerator(hatarEgy, hatarKetto) {
     } while (sikeresGeneralas == false && probalkozasokSzama < 100);
     return generaltSzam;
 }
-// Téglalap kerület terület Tuple típusú visszatérési értékkel
+// Univerzális tömb generátor Typescrip-ben
+function UniverzalisTombGenerator(meret, alsoHatar, felsoHatar) {
+    var generaltTommb = [];
+    for (var i = 0; i < meret; i++) {
+        generaltTommb.push(Math.round(Math.random() * (felsoHatar - alsoHatar)) + alsoHatar);
+    }
+    return generaltTommb;
+}
+// Téglalap kerület, terület függvény Tuple típusú visszatérési értékkel
+function teglalapKeruletTeruletTupleFuggveny(a, b) {
+    var kerulet = 2 * (a + b);
+    var terulet = a * b;
+    return [kerulet, terulet];
+}
+// Összegzés tétele Typescript-ben
+function OsszegzesTeteleTS(vizsgaltTomb) {
+    var osszeg = 0;
+    for (var i = 0; i < vizsgaltTomb.length; i++) {
+        osszeg += vizsgaltTomb[i];
+    }
+    return osszeg;
+}

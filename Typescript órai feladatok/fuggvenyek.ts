@@ -1,6 +1,3 @@
-export{};
-
-
 // Visszatérési érték és paraméter nélküli eljárás
 
 function ILoveTypeScript():void{

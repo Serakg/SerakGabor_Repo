@@ -55,3 +55,42 @@ function PrimGenerator(hatarEgy:number, hatarKetto:number):number{
     }while(sikeresGeneralas == false && probalkozasokSzama < 100)
     return generaltSzam;
 }
+
+
+
+// Univerzális tömb generátor Typescrip-ben
+
+function UniverzalisTombGenerator(meret:number, alsoHatar:number, felsoHatar:number): Array<number>{
+
+    let generaltTommb: Array<number> = [];
+    for (let i = 0; i < meret; i++)
+    {
+        generaltTommb.push(Math.round(Math.random()*(felsoHatar-alsoHatar))+alsoHatar);
+    }
+    return generaltTommb;
+}
+
+
+
+
+
+// Téglalap kerület, terület függvény Tuple típusú visszatérési értékkel
+
+
+function teglalapKeruletTeruletTupleFuggveny(a:number, b:number):[number, number]{
+    let kerulet:number = 2*(a+b);
+    let terulet:number = a*b;
+    return [kerulet, terulet];
+}
+
+
+// Összegzés tétele Typescript-ben
+
+function OsszegzesTeteleTS(vizsgaltTomb:Array<number>):number{
+    let osszeg:number = 0;
+    for (let i = 0; i < vizsgaltTomb.length; i++)
+    {
+        osszeg += vizsgaltTomb[i];
+    }
+    return osszeg;
+}
