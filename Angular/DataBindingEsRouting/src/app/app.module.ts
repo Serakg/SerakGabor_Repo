@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MintaComponent } from './minta/minta.component';
 import { FeladatComponent } from './feladat/feladat.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
