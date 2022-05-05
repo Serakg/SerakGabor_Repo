@@ -49,3 +49,10 @@
 
 
     <p>{{interfaceElem.nev}} [ {{interfaceElem.kor}} ] Beosztása: {{interfaceElem.beosztas}}</p>
+
+
+    <ul>
+        <li *ngFor = "let dolgozo of interfaceTomb">
+            {{dolgozo.nev}} ({{dolgozo.fizetes}})
+        </li>
+    </ul>

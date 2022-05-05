@@ -1,0 +1,34 @@
+<h1>pipes works!</h1>
+
+
+<h2>Szövegformázó elemek</h2>
+<h3>Sima szöveg {{mintaSzoveg}}</h3>
+
+<p>Nagybetűssé alakított szöveg: {{mintaSzoveg | uppercase }}</p>
+<p>Kisbetűssé alakított szöveg: {{mintaSzoveg | lowercase }}</p>
+<p>Nagy kezdőbetűs (címmé alakított) szöveg: {{mintaSzoveg | titlecase }}</p>
+
+
+<h2>Számok formázása</h2>
+<h3>Eredeti szám {{valosSzam}}</h3>
+
+<p>Egész számmá kerekítés: {{valosSzam | number: "1.0-0" }}</p>
+<p>Vezető nullák beszúrása: {{valosSzam | number: "3.0-0" }}</p>
+<p>Tizedes érték megadása: {{valosSzam | number: "1.0-2" }}</p>
+
+
+<h2>Százalékos formátum megadása</h2>
+<h3>Eredeti százalékos érték {{szazalekosErtek}}</h3>
+
+<p>Egész százalékos érték: {{szazalekosErtek | percent: "1.0-0"}}</p>
+<p>Egész százalékos érték tizedessel: {{szazalekosErtek | percent: "1.0-2"}}</p>
+
+
+<h2>Pénz formátum megadása</h2>
+<h3>Eredeti pénz érték: {{penzErtek}} </h3>
+
+<p>USA dollár pénz érték megjelenítése: {{penzErtek | currency: "USD"}}</p>
+<p>Euró pénz érték megjelenítése: {{penzErtek | currency: "EUR"}}</p>
+<p>Angol font pénz érték megjelenítése: {{penzErtek | currency: "GBP"}}</p>
+<p>Magyar forint pénz érték megjelenítése: {{penzErtek | currency: "HUF"}}</p>
+<p>USA dollár pénz érték megjelenítése tizedes nélkül: {{penzErtek | currency: "USD" : "symbol": "1.0-0" }}</p>
