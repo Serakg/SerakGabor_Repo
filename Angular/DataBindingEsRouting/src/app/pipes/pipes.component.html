@@ -25,10 +25,36 @@
 
 
 <h2>Pénz formátum megadása</h2>
-<h3>Eredeti pénz érték: {{penzErtek}} </h3>
+<h3>Eredeti pénz érték: {{penzErtek}}</h3>
 
 <p>USA dollár pénz érték megjelenítése: {{penzErtek | currency: "USD"}}</p>
 <p>Euró pénz érték megjelenítése: {{penzErtek | currency: "EUR"}}</p>
 <p>Angol font pénz érték megjelenítése: {{penzErtek | currency: "GBP"}}</p>
 <p>Magyar forint pénz érték megjelenítése: {{penzErtek | currency: "HUF"}}</p>
 <p>USA dollár pénz érték megjelenítése tizedes nélkül: {{penzErtek | currency: "USD" : "symbol": "1.0-0" }}</p>
+
+
+<h2>Dátum / Idő formátum megjelenítése</h2>
+<h3>Eredeti dátum formátum {{datumErtek}}</h3>
+<h4>Előre beállított minták</h4>
+
+<p>Rövid teljes dátum formátum: {{datumErtek | date:"short"}}</p>
+<p>Hosszú teljes dátum formátum: {{datumErtek | date:"long"}}</p>
+<p>Rövid dátum formátum: {{datumErtek | date:"shortDate"}}</p>
+<p>Rövid teljes dátum formátum: {{datumErtek | date:"fullDate"}}</p>
+<p>Teljes dátum formátum kiírva: {{datumErtek | date:"full"}}</p>
+<p>Rövid idő formátum: {{datumErtek | date:"shortTime"}}</p>
+<p>Teljes idő formátum: {{datumErtek | date:"fullTime"}}</p>
+
+
+<h4>Egyedi minták, alapelemek</h4>
+
+<p>Csak év megjelenítése: {{datumErtek | date: "YYYY"}}</p>
+<p>Csak hónap megjelenítése: {{datumErtek | date: "MM"}}</p>
+<p>Csak nap megjelenítése: {{datumErtek | date: "dd"}}</p>
+<p>Év / hónap / nap megjelenítése: {{datumErtek | date: "YYYY-MM-dd"}}</p>
+<p>Csak nap (szöveggel) megjelenítése: {{datumErtek | date: "EEEE"}}</p>
+<p>Csak óra megjelenítése: {{datumErtek | date: "hh"}}</p>
+<p>Csak perc megjelenítése: {{datumErtek | date: "mm"}}</p>
+<p>Csak másodperc megjelenítése: {{datumErtek | date: "ss"}}</p>
+<p>Óra / perc / másodperc megjelenítése: {{datumErtek | date: "hh:mm:ss"}}</p>
