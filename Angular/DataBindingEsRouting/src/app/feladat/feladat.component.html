@@ -7,11 +7,28 @@
 <h2>1.feladat</h2>
 <img src="{{kepHelye}}" alt="{{kepCime}}" title="{{kepCime}}" width="{{kepMeret}}">
 <img [src]="kepHelye" [alt]="kepCime" [title]="kepCime" [width]="kepMeret">
-
 <hr>
 
 <!--2. feladat-->
 <!--Gomb, ami lecseréli az Angular képet React-re, és az "alt" és "title" tulajdonságokat is-->
 
 <h2>2. feladat</h2>
-<button class="btn btn-primary m-2" (click) = "kepModosito()">Kép módosítása</button>
+<button class="btn btn-primary m-2" (click) = "kepModosito()">Angular kép módosítása React-re</button>
+<hr>
+
+<!--3. feladat-->
+<!--Téglalap kerület, terület kétirányú Databinding-gal-->
+
+<h2>Téglalap kerülete, területe</h2>
+<div class="form-group">
+    <label for="aOldal">A oldal értéke: </label>
+    <input type="number" id="aOldal" class="form-control" [(ngModel)] = "aOldalMerete" value="1" min="1" max="100">
+</div>
+<div class="form-group">
+    <label for="bOldal">B oldal értéke: </label>
+    <input type="number" id="bOldal" class="form-control" [(ngModel)] = "bOldalMerete" value="1" min="1" max="100">
+</div>
+<p>A téglalap "A" oldalának mérete: {{aOldalMerete}}</p>
+<p>A téglalap "B" oldalának mérete: {{bOldalMerete}}</p>
+<p>A téglalap kerülete: {{2*(aOldalMerete + bOldalMerete)}}</p>
+<p>A téglalap területe: {{aOldalMerete * bOldalMerete}} cm<sup>2</sup></p>

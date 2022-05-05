@@ -24,4 +24,8 @@ export class FeladatComponent implements OnInit {
     this.kepMeret = "200";
   }
 
+
+  aOldalMerete:number = 1;
+  bOldalMerete:number = 1;
+
 }
