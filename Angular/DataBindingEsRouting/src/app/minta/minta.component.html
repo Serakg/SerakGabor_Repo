@@ -37,3 +37,15 @@
     <p>A négyzet A oldalának mérete: {{aOldal}} cm</p>
     <p>A négyzet kerülete: {{4 * aOldal}} cm</p>
     <p>A négyzet területe: {{aOldal * aOldal}} cm <sup>2</sup></p>
+
+    <hr>
+    <p>Tömbünk legelső eleme: {{bevasarloLista[0]}}</p>
+
+    <ul>
+        <li *ngFor = "let gyumolcs of bevasarloLista">
+            {{gyumolcs}}
+        </li>
+    </ul>
+
+
+    <p>{{interfaceElem.nev}} [ {{interfaceElem.kor}} ] Beosztása: {{interfaceElem.beosztas}}</p>
