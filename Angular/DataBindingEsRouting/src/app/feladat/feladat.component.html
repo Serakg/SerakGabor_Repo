@@ -1,1 +1,17 @@
 <p>Data Binding feladatok</p>
+
+
+<!--1. feladat-->
+<!--Angular kép elhelyezése linkből-->
+
+<h2>1.feladat</h2>
+<img src="{{kepHelye}}" alt="{{kepCime}}" title="{{kepCime}}" width="{{kepMeret}}">
+<img [src]="kepHelye" [alt]="kepCime" [title]="kepCime" [width]="kepMeret">
+
+<hr>
+
+<!--2. feladat-->
+<!--Gomb, ami lecseréli az Angular képet React-re, és az "alt" és "title" tulajdonságokat is-->
+
+<h2>2. feladat</h2>
+<button class="btn btn-primary m-2" (click) = "kepModosito()">Kép módosítása</button>
