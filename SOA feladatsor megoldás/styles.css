@@ -1,0 +1,74 @@
+body {
+  background-color: rgb(111, 111, 111);
+  background-size: cover;
+  background-image: url("SOA_Back.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+p {
+  margin: 5px;
+  text-indent: 15px;
+  line-height: 110%;
+  text-align: justify;
+}
+
+#imageright {
+  height: 500px;
+  padding: 0px 5px 5px;
+  border-radius: 20px;
+  overflow: hidden;
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #F05033;
+}
+
+#imageright img {
+  width: 600px;
+  position: relative;
+  left: -5px;
+}
+
+p.kepszoveg {
+  font-size: 0.9em;
+  margin: 0px;
+  line-height: 100%;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  text-indent:0px;
+}
+
+#tartalom {
+  background-color: rgba(255, 255, 255, 0.70);
+  border-radius: 30px;
+  width: 80%;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  text-align: justify;
+}
+
+.kiemeles{
+  color: #F05033;
+  font-weight: bold;
+}
+.kiemeles:hover{
+  color: blue;
+}
+th{
+  color: white;
+  background-color: #F05033;
+}
+a{
+  color: black;
+}
+a:hover{
+  color: #F05033;
+}
