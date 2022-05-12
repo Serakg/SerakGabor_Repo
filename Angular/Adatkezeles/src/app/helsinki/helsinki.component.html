@@ -1,0 +1,52 @@
+<h1 style="text-align:center;">helsinki works!</h1>
+<!--
+<ul>
+    <li *ngFor="let eredmeny of HelsinkiEredmenyek">
+        {{eredmeny.helyezes}} . hely ( {{eredmeny.csapatMeret}}fő )
+        [ {{eredmeny.sportag}} ] - {{eredmeny.versenySzam}}
+    </li>
+</ul>
+-->
+
+<h2>Új adat megadása</h2>
+
+<form style="width: 800px; margin: 50px auto;">
+    <div class="form-floating m-3">
+        <select class="form-select" id="helyezesSelect">
+            <option value="1">Arany</option>
+            <option value="2">Ezüst</option>
+            <option value="3">Bronz</option>
+            <option value="4">4. hely</option>
+            <option value="5">5. hel</option>
+            <option value="6">6 hely</option>
+        </select>
+        <label for="helyzesSelect">Versenyző helyezése</label>
+    </div>
+
+    <div class="form-floating m-3">
+        <select class="form-select" id="meretSelect">
+            <option *ngFor = "let meret of CsapatMeretOpciok" value="{{meret}}">{{meret}}</option>
+        </select>
+        <label for="meretSelect">Csapat mérete(fő)</label>
+    </div>
+
+</form>
+
+<table class="table table-dark table-striped table-bodered table-hover text-center table-sm">
+    <thead>
+        <tr>
+            <th>Helyezés</th>
+            <th>Csapatméret</th>
+            <th>Sportág</th>
+            <th>Versenyszám</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let eredmeny of HelsinkiEredmenyek">
+            <td>{{eredmeny.helyezes}}</td>
+            <td>{{eredmeny.csapatMeret}}</td>
+            <td>{{eredmeny.sportag}}</td>
+            <td>{{eredmeny.versenySzam}}</td>
+        </tr>
+    </tbody>
+</table>
