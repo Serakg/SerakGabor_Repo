@@ -12,6 +12,37 @@ export class HelsinkiComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // 6. lépés -  Táblázat szűrő létrehozása
+  tablazatSzuro!: string;
+
+
+
+  //7. lépés - sportágak listába való feltöltése/megjelenítése
+
+  SportagListaGeneralo(vizsgaltTomb: Helsinki[]): string[] {
+
+    let generaltLista: string[] = [];
+    for (let i = 0; i < vizsgaltTomb.length; i++) {
+      let SzerepelE: Boolean = false;
+      for (let j = 0; j < generaltLista.length; j++) {
+        if (vizsgaltTomb[i].sportag == generaltLista[j])
+        {
+          SzerepelE = true;
+        }
+      }
+      if (SzerepelE == false)
+      {
+        generaltLista.push(vizsgaltTomb[i].sportag)
+      }
+    }
+    return generaltLista
+  }
+
+  generaltSportagLista = this.SportagListaGeneralo(this.HelsinkiEredmenyek);
+
+
+
   eredmenyek = [
     "1 1 atletika kalapacsvetes",
     "1 1 uszas 400m_gyorsuszas",
@@ -82,12 +113,11 @@ export class HelsinkiComponent implements OnInit {
 
   //3. lépés - Objektum típussal való tömbfeltöltő függvény
 
-  Obkjektumfeltolto(feltoltendoElem:string[]):Helsinki[]{
-    const beolvasottAdatok:Helsinki[] = [];
-    for (let i = 0; i < feltoltendoElem.length; i++)
-    {
-      let daraboltSor:string[] = feltoltendoElem[i].split(" ");
-      const helsinkiElem:Helsinki = new Helsinki(Number(daraboltSor[0]), Number(daraboltSor[1]), daraboltSor[2], daraboltSor[3]);
+  Obkjektumfeltolto(feltoltendoElem: string[]): Helsinki[] {
+    const beolvasottAdatok: Helsinki[] = [];
+    for (let i = 0; i < feltoltendoElem.length; i++) {
+      let daraboltSor: string[] = feltoltendoElem[i].split(" ");
+      const helsinkiElem: Helsinki = new Helsinki(Number(daraboltSor[0]), Number(daraboltSor[1]), daraboltSor[2], daraboltSor[3]);
       beolvasottAdatok.push(helsinkiElem);
     }
 
@@ -102,40 +132,39 @@ export class HelsinkiComponent implements OnInit {
 
   //5. lépés - Csapatméret függvény
 
-  CsapatMeret(minCsapatMeret:number, maxCsapatMeret:number):number[]{
-    const CsapatMeretek:number[] = [];
-    for (let aktCsapatMeret = minCsapatMeret; aktCsapatMeret <= maxCsapatMeret; aktCsapatMeret++)
-    {
+  CsapatMeret(minCsapatMeret: number, maxCsapatMeret: number): number[] {
+    const CsapatMeretek: number[] = [];
+    for (let aktCsapatMeret = minCsapatMeret; aktCsapatMeret <= maxCsapatMeret; aktCsapatMeret++) {
       CsapatMeretek.push(aktCsapatMeret);
     }
 
     return CsapatMeretek
   }
 
-  CsapatMeretOpciok = this.CsapatMeret(1,20);
+  CsapatMeretOpciok = this.CsapatMeret(1, 20);
 
 }
 
 
 // 1. lépés - Interface létrehozás "váznak" (nem kötelező)
 
-export interface Eredmeny{
-  helyezes:number;
-  csapatMeret:number;
-  sportag:string;
-  versenySzam:string;
+export interface Eredmeny {
+  helyezes: number;
+  csapatMeret: number;
+  sportag: string;
+  versenySzam: string;
 }
 
 
 //2. lépés - Osztály létrehozása interface használatával
 
-export class Helsinki implements Eredmeny{
+export class Helsinki implements Eredmeny {
   helyezes: number;
   csapatMeret: number;
   sportag: string;
   versenySzam: string;
 
-  constructor (helyezes:number, csapatMeret:number, sportag:string, versenySzam:string){
+  constructor(helyezes: number, csapatMeret: number, sportag: string, versenySzam: string) {
     this.helyezes = helyezes;
     this.csapatMeret = csapatMeret;
     this.sportag = sportag;

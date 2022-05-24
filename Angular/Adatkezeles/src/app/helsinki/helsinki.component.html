@@ -1,12 +1,19 @@
 <h1 style="text-align:center;">helsinki works!</h1>
-<!--
+
 <ul>
     <li *ngFor="let eredmeny of HelsinkiEredmenyek">
         {{eredmeny.helyezes}} . hely ( {{eredmeny.csapatMeret}}fő )
         [ {{eredmeny.sportag}} ] - {{eredmeny.versenySzam}}
     </li>
 </ul>
--->
+
+<ul>
+    <li *ngFor="let eredmeny of generaltSportagLista">
+        {{eredmeny.helyezes}} . hely ( {{eredmeny.csapatMeret}}fő )
+        [ {{eredmeny.sportag}} ] - {{eredmeny.versenySzam}}
+    </li>
+</ul>
+
 
 <h2>Új adat megadása</h2>
 
@@ -30,7 +37,14 @@
         <label for="meretSelect">Csapat mérete(fő)</label>
     </div>
 
+
+
 </form>
+
+<div class="form-group">
+    <label for="tablazatSzuroElem">Táblázat szűrése</label>
+    <input type="text" id="tablazatSzuroElem" class="form-control" aria-placeholder="Keresés..." [(ngModel)] = "tablazatSzuro">
+</div>
 
 <table class="table table-dark table-striped table-bodered table-hover text-center table-sm">
     <thead>
@@ -42,7 +56,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let eredmeny of HelsinkiEredmenyek">
+        <tr *ngFor="let eredmeny of HelsinkiEredmenyek | filter:tablazatSzuro">
             <td>{{eredmeny.helyezes}}</td>
             <td>{{eredmeny.csapatMeret}}</td>
             <td>{{eredmeny.sportag}}</td>
