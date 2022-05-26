@@ -1,0 +1,71 @@
+<h1>Reactive Form(űrlap) és Táblázat létrehozása</h1>
+
+
+
+Megadott adatok {{form.value | json }}
+<hr>
+Dolgozó neve: {{this.form.controls["dolgozoNev"].value}}<br>
+Dolgozó életkora: {{this.form.controls["dolgozoEletkor"].value}}<br>
+Dolgozó fizetése: {{this.form.controls["dolgozoFizetes"].value}}<br>
+Dolgozó beosztása: {{this.form.controls["dolgozoBeosztas"].value}}<br>
+<hr>
+<form [formGroup] = "form">
+    <!--Appearance típusok: Outline, Legacy, Fill, Standard-->
+    <mat-form-field appearance="outline">
+        <mat-label>Dolgozó neve</mat-label>
+        <input matInput formControlName = "dolgozoNev">
+        <mat-hint>A név vezetéknévből és keresztnévből áll. Legalább 10 karakter...</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Dolgozó életkora</mat-label>
+        <input matInput formControlName = "dolgozoEletkor">
+        <mat-hint>A dolgozó életkora legalább 18 évet haladja meg...</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Dolgozó fizetése</mat-label>
+        <input matInput formControlName = "dolgozoFizetes">
+        <mat-hint>Itt adhatja meg, mennyit keressen a dolgozó...</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance = "outline">
+        <mat-select formControlName = "dolgozoBeosztas">
+            <mat-option value = "Rendszergazda">Rendszergazda</mat-option>
+            <mat-option value = "Ügyvezető igazgató">Ügyvezető igazgató</mat-option>
+            <mat-option value = "Marketing manager">Marketing manager</mat-option>
+            <mat-option value = "">Rendszergazda</mat-option>
+            <mat-option value = "Takarító">Takarító</mat-option>
+            <mat-option value = "Biztonság iőr">Biztonsági őr</mat-option>
+            <mat-option value = "Irodai titkár">Irodai titkár</mat-option>
+            <mat-option value = "Üzemorvos">Üzemorvos</mat-option>
+        </mat-select>
+        <mat-label>Dolgozó beosztása</mat-label>
+        <mat-hint>Itt adhatjuk meg, mit fog dolgozni az adott dolgozó...</mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button>Dolgozó regisztrálása</button>
+
+</form>
+<br><br>
+<hr>
+
+<table mat-table [dataSource] = "DolgozoTombObjektum"> <!--Kijelöljük az adatforrást-->
+    <ng-container matColumnDef = "nev"> <!--Definiáljuk az oszlopokat-->
+        <mat-header-cell *matHeaderCellDef>Név</mat-header-cell> <!--Fejlécadatokat megadjuk-->
+        <mat-cell *matCellDef = "let row"> {{row.nev}} </mat-cell> <!--Oszlop adatokat megadjuk-->
+    </ng-container>
+
+    <ng-container matColumnDef = "kor"> <!--Definiáljuk az oszlopokat-->
+        <mat-header-cell *matHeaderCellDef>Életkor</mat-header-cell> <!--Fejlécadatokat megadjuk-->
+        <mat-cell *matCellDef = "let row"> {{row.kor}} </mat-cell> <!--Oszlop adatokat megadjuk-->
+    </ng-container>
+
+    <ng-container matColumnDef = "fizetes"> <!--Definiáljuk az oszlopokat-->
+        <mat-header-cell *matHeaderCellDef>Fizetés</mat-header-cell> <!--Fejlécadatokat megadjuk-->
+        <mat-cell *matCellDef = "let row"> {{row.fizetes}} </mat-cell> <!--Oszlop adatokat megadjuk-->
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef = "['nev', 'kor', 'fizetes']"></mat-header-row>
+    <mat-row *matRowDef = "let row; columns:['nev', 'kor', 'fizetes']"></mat-row>
+</table>
