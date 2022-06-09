@@ -1,23 +1,32 @@
-3. feladat:
+--3. feladat:
 
-SELECT DISTINCT telepules from partnerek
-ORDER BY telepules ASC
-
-
-4. feladat:
-
-SELECT COUNT("partnerid") as alkalmak FROM kiszallitasok
-WHERE partnerid = 27
+SELECT DISTINCT telepules FROM partnerek
+ORDER BY telepules ASC;
 
 
-5. feladat:
+--4. feladat:
 
-SELECT MAX(karton) as legtobb FROM kiszallitasok
-WHERE datum LIKE '%-05-%'
+SELECT COUNT("sorsz") AS "alkalmak" FROM partnerek
+INNER JOIN kiszallitasok ON kiszallitasok.partnerid = partnerid
+WHERE telepules = "Vác";
 
 
-6. feladat:
+--5. feladat:
 
-SELECT id, telepules FROM partnerek
-HAVING COUNT(ID) > 1
+SELECT MAX(karton) AS "legtobb" FROM kiszallitasok
+WHERE datum LIKE '%-05-%';
 
+
+--6. feladat:
+
+SELECT COUNT (id), telepules FROM partnerek
+GROUP BY telepules
+HAVING (id) > 1;
+
+
+--7. feladat:
+
+SELECT gyumolcslevek.gynev AS "ital", SUM(kiszallitasok.karton) * 6 AS "doboz" FROM gyumolcslevek
+INNER JOIN kiszallitasok ON gyumolcslevek.id = kiszallitasok.gyumleid
+GROUP BY gyumolcslevek.gynev
+ORDER BY doboz DESC LIMIT 3;
