@@ -1,0 +1,13 @@
+P1) Hozz létre egy Collection-t Dolgozo néven és tölsd fel bele a dolgozokObjektumTomb.js fájl tartalmát
+
+P2) Add hozzá a dolgozókhoz, a cég tulaját:
+    nev: "Szikla Szilárd",
+    kor: 60,
+    fizetes: 5.000.000,
+    beosztas: "Tulajdonos"
+
+P3) Növeld a Marketing Manager fizetését 1.000.000 Ft-ra
+
+P4) Listázd ki a cég dolgozóit fizetésük alapján csökkenő sorrendben!
+
+P5) Jelenítsd meg a cég 3 legfiatalabb tagját!
