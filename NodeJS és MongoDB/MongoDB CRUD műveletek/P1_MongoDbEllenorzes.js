@@ -1,5 +1,5 @@
 var MongoClient =require('mongodb').MongoClient;
-var url="mongodb+srv://nagyferi:vUgljhcvNXkRAI0e@cluster0.kceb1.mongodb.net/test";
+var url = "mongodb+srv://gabser:Gabor96Serak@cluster1.ujbni.mongodb.net/test";
 //Ideiglenes hozzáférés
 //Username: nagyferi
 //Password: vUgljhcvNXkRAI0e
