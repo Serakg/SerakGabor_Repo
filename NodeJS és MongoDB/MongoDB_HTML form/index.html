@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB adatfeltöltés HTML fájlból</title>
+    <!-- Bootstrap CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <form action="/" method="post" style="margin:50px auto; width:600px;">
+        <!--Név mező-->
+        <div class="form-group">
+            <label for="nevMezo">Dolgozó neve</label>
+            <input type="text" class="form-control" id="nevMezo" name="nev" required>
+        </div>
+        <!--Kor mező-->
+        <div class="form-group">
+            <label for="korMezo">Dolgozó életkora</label>
+            <input type="number" class="form-control" id="korMezo" name="kor" required>
+        </div>
+        <!--Fizetés mező-->
+        <div class="form-group">
+            <label for="fizetesMezo">Dolgozó fizetése</label>
+            <input type="number" class="form-control" id="fizetesMezo" name="fizetes" required>
+        </div>
+        <!--Beosztás legördülő lista-->
+        <div class="form-group">
+            <label for="beosztasMezo">Dolgozó beosztása</label>
+            <select class="form-select" id="beosztasMezo" name="beosztas">
+                <option selected>Válassz egy beosztás</option>
+                <option value="Biztonsági Őr">Biztonsági Őr</option>
+                <option value="Irodai titkár">Irodai titkár</option>
+                <option value="Marketing Manager">Marketing Manager</option>
+                <option value="Takarító">Takarító</option>
+                <option value="Rendszergazda">Rendszergazda</option>
+                <option value="Üzemorvos">Üzemorvos</option>
+                <option value="Ügyvezető Igazgató">Ügyvezető Igazgató</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 form-control">Adatok feltöltése Szerverre</button>
+    </form>
+</body>
+</html>
