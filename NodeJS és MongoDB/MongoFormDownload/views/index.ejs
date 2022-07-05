@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB adatbázis kiolvasása HTML táblába</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    <table class="table table-striped table-dark table-hover text-center">
+        <thead>
+            <th>Dolgozó neve</th>
+            <th>Dolgozó Életkora</th>
+            <th>Dolgozó fizetése</th>
+            <th>Dolgozó beosztása</th>
+            <tbody>
+                <!-- ejs hivatkozások formája (<%  %>)-->
+
+                <%dolgozokLista.forEach(dolgozok => {
+
+                    <tr>
+                        <td>
+                            <%dolgozok.nev %>
+                        </td>
+                        <td>
+                            <%dolgozok.kor %>
+                        </td>
+                        <td>
+                            <%dolgozok.fizetes %>
+                        </td>
+                        <td>
+                            <%dolgozok.beosztas %>
+                        </td>
+                        
+                    </tr>
+
+                })
+
+            </tbody>
+        </thead>
+    </table>
+
+</body>
+</html>
