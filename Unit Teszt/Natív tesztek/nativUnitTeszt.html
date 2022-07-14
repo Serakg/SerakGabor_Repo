@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alap Unit teszt</title>
+    <script src="alapUnitTeszt.js"></script>
+</head>
+
+<body>
+    <script>
+
+
+        //Tesztelendő függvény
+        function KetSzamOsszege(szam1, szam2) {
+            return szam1 + szam2;
+        }
+
+        //Tesztelendő függvény
+        function NegyzetKerulet(aOldal) {
+
+            return aOldal * 4
+        }
+
+
+
+        //Teszt a függvényhez
+        function KetSzamOsszegeTeszt1() {
+            // mukodik értéke true or false
+
+            if (KetSzamOsszege(5, 6) == 11) {
+                return true;
+            }
+            return false;
+
+        }
+
+        //Teszt a függvényhez
+        function NegyzetKeruletTeszt(bemenetiErtek) {
+            if (NegyzetKerulet(bemenetiErtek) == 4 * bemenetiErtek) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        // Ez a "valódi natív Unit teszt"
+        function NegyzetKeruletTesztV2(bemenetiErtek, elvartEredmeny) {
+            if (NegyzetKerulet(bemenetiErtek) == elvartEredmeny) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+
+        //Eredmény kiíratása
+        function EredmenyMegjelenit(elnevezes, fuggvenyNeve) {
+            if (fuggvenyNeve == true) {
+                document.write(elnevezes + "függvény futtatása sikeres" + "<hr>");
+            }
+            else {
+                document.write(elnevezes + "függvény futtatása sikertelen" + "<hr>");
+            }
+        }
+
+        // Teszteket megjelenítő függvények
+        function tesztek() {
+            EredmenyMegjelenit("Két szám összege", KetSzamOsszegeTeszt1());
+            EredmenyMegjelenit("Négyzet kerület teszt 01: ", NegyzetKeruletTeszt(3));
+            EredmenyMegjelenit("Négyzet kerület teszt 02: ", NegyzetKeruletTeszt(5));
+            EredmenyMegjelenit("Négyzet kerület teszt 03: ", NegyzetKeruletTeszt("alma"));
+            EredmenyMegjelenit("Négyzet kerület V2 teszt 01: ", NegyzetKeruletTesztV2(3, 12));
+            EredmenyMegjelenit("Négyzet kerület V2 teszt 02: ", NegyzetKeruletTesztV2(5, 20));
+            EredmenyMegjelenit("Négyzet kerület V2 teszt 03: ", NegyzetKeruletTesztV2(1, 2));
+            EredmenyMegjelenit("Prímszám vizsgál függvény 01: ", PrimETeszt(13, true));
+            EredmenyMegjelenit("Prímszám vizsgál függvény 02: ", PrimETeszt(12, false));
+            EredmenyMegjelenit("Prímszám vizsgál függvény 03: ", PrimETeszt(8, true));
+            EredmenyMegjelenit("Párostömb kiértékelése 01: ", ParosakATombElemekTeszt(6));
+        }
+
+        //Tesztek meghívása
+        tesztek();
+
+
+        //----------------------------------------------------------------------------------------------------------------------
+
+        //Tesztelendő függvény
+        function PrimE (vizsgaltSzam){
+            let osztoMennyiseg = 0;
+            for (let i = 0; i <= vizsgaltSzam; i++){
+                if (vizsgaltSzam % i == 0){
+                    osztoMennyiseg++
+                }
+            }
+            if (osztoMennyiseg == 2){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+
+        //Teszt a függvényhez
+
+        function PrimETeszt(bemenetiErtek, elvartEredmeny){
+           if (PrimE(bemenetiErtek) == elvartEredmeny){
+            return true;
+           }
+           return false;
+        }
+
+
+
+        //Páros számokat tartalmazó tömb generáló függvény
+        function ParosTombGenerator(tombMeret){
+            let parosak = [];
+            for (let i = 0; i < tombMeret.length; i++){
+               let generaltSzam = (Math.round(Math.random()*50))*2;
+               parosak.push(generaltSzam);
+            }
+        }
+
+
+
+        //Tömb elemeinek párosságát tesztelő unit teszt
+        function ParosakATombElemekTeszt(bemenetiErtek){
+            let eredmeny = true;
+            for (let i = 0; i < bemenetiErtek.length; i++){
+                if (bemenetiErtek[i] % 2 != 0){
+                    eredmeny = false;
+                }
+            }
+            return eredmeny;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
