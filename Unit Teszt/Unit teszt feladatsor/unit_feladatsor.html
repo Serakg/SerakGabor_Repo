@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit teszt feladatsor</title>
+</head>
+
+<body>
+
+    <script>
+
+        //Eredmény kiíratása
+        function EredmenyekKiirasa(elnevezes, fuggvenyNeve) {
+            if (fuggvenyNeve == true) {
+                document.write(elnevezes + "függvény tesztelése sikeres" + "<hr>");
+            }
+            else {
+                document.write(elnevezes + "függvény tesztelése sikertelen" + "<hr>");
+            }
+        }
+
+        // Teszteket megjelenítő függvények
+        function tesztEsetek() {
+            EredmenyekKiirasa("Prímszám tesztelő függvény 01: ", PrimszamTeszt(13, true));
+            EredmenyekKiirasa("Prímszám tesztelő függvény 02: ", PrimszamTeszt(8, false));
+            EredmenyekKiirasa("Prímszám tesztelő függvény 03: ", PrimszamTeszt(21, false));
+            EredmenyekKiirasa("Prímszám tesztelő függvény 04: ", PrimszamTeszt(29, true));
+            EredmenyekKiirasa("Prímszám tesztelő függvény (saját teszt eset) : ", PrimszamTeszt(90, true)); //Sikertelen lefutás
+            EredmenyekKiirasa("Víz halmazállapot tesztelő függvény 01: ", HalmazAllapotTeszt(-20, "szilard"));
+            EredmenyekKiirasa("Víz halmazállapot tesztelő függvény 02: ", HalmazAllapotTeszt(69, "folyekony"));
+            EredmenyekKiirasa("Víz halmazállapot tesztelő függvény 03: ", HalmazAllapotTeszt(121, "legnemu"));
+            EredmenyekKiirasa("Víz halmazállapot tesztelő függvény (saját teszt eset): ", HalmazAllapotTeszt(1210, "legnemu")); //Sikeres lefutás
+            EredmenyekKiirasa("Tömb karakterhosszúság tesztelő függvény 01: ", MegfeleloHosszuElemMeghatarozoTeszt(["alma", "körte", "barack", "szilva"], 3));
+            EredmenyekKiirasa("Tömb karakterhosszúság tesztelő függvény 02: ", MegfeleloHosszuElemMeghatarozoTeszt(["nyúl", "kacsa", "liba", "kos", "tehén"], 2));
+            EredmenyekKiirasa("Tömb karakterhosszúság tesztelő függvény 03: ", MegfeleloHosszuElemMeghatarozoTeszt(["matek", "magyar", "tesi", "infó", "rajz", "földrajz", "fizika"], 4));
+            EredmenyekKiirasa("Tömb karakterhosszúság tesztelő függvény (saját teszt eset): ", MegfeleloHosszuElemMeghatarozoTeszt(["Pista", "Márk", "Dávid", "Károly", "Éva"], 1)); //Sikertelen lefutás
+        }
+
+        //tesztek() meghívása
+        tesztEsetek();
+
+
+
+
+        //--------------------------------------------------------------------------------------------------------------------------------------
+
+        // 1. fealdat - Prímszám teszt
+
+        //Tesztelendő függvény
+        function PrimszamE(vizsgaltSzam) {
+            let osztoMennyiseg = 0;
+            for (let i = 0; i <= vizsgaltSzam; i++) {
+                if (vizsgaltSzam % i == 0) {
+                    osztoMennyiseg++
+                }
+            }
+            if (osztoMennyiseg == 2) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+
+        //Teszt a függvényhez
+        function PrimszamTeszt(bemenetiErtek, elvartEredmeny) {
+            if (PrimszamE(bemenetiErtek) == elvartEredmeny) {
+                return true;
+            }
+            return false;
+        }
+
+
+
+
+
+
+        //2. feladat - Víz hőmérséklet teszt
+
+
+        //Tesztelendő függvény
+        function HalmazAllapotMeghatarozasa(vizHomerseklet) {
+
+            if (vizHomerseklet < 0) {
+                return "szilard"
+            }
+            else if (vizHomerseklet > 100) {
+                return "legnemu"
+            }
+            else {
+                return "folyekony"
+            }
+        }
+
+
+        //Teszt a függvényhez
+        function HalmazAllapotTeszt(bemenetiErtek, elvartEredmeny) {
+            if (HalmazAllapotMeghatarozasa(bemenetiErtek) == elvartEredmeny) {
+                return true;
+            }
+            return false;
+        }
+
+
+
+
+
+
+
+        //3. feladat - Tömbben 5 karakter hosszú elemek száma tesztelés
+
+
+        //Tesztelendő függvény
+        function TombKarakterSzama(vizsgaltTomb) {
+            let megfeleloHosszuElemek = 0;
+
+            for (let i = 0; i < vizsgaltTomb.length; i++) {
+                let elemHossza = vizsgaltTomb[i].length;
+                if (elemHossza >= 5) {
+                    megfeleloHosszuElemek++;
+                }
+            }
+            return megfeleloHosszuElemek;
+        }
+
+
+        //Teszt a függvényhez
+        function MegfeleloHosszuElemMeghatarozoTeszt(bemenetiErtek, elvartEredmeny) {
+            if (TombKarakterSzama(bemenetiErtek) == elvartEredmeny) {
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
