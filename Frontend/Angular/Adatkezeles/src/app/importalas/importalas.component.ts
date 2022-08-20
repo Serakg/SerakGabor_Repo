@@ -36,8 +36,8 @@ export class ImportalasComponent implements OnInit {
     for (let i = 0; i < feltoltendoElem.length; i++)
     {
       let daraboltSor:string[] = feltoltendoElem[i].split(";");
-      const kekTureElem:Kektura = new Kektura(daraboltSor[0], daraboltSor[1], Number (daraboltSor[2].replace(",", ".")), Number(daraboltSor[3]), Number(daraboltSor[4]), daraboltSor[5]);
-      beolvasottAdatok.push(kekTureElem);
+      const kekTuraElem:Kektura = new Kektura(daraboltSor[0], daraboltSor[1], Number (daraboltSor[2].replace(",", ".")), Number(daraboltSor[3]), Number(daraboltSor[4]), daraboltSor[5]);
+      beolvasottAdatok.push(kekTuraElem);
     }
     return beolvasottAdatok;
   }

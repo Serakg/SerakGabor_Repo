@@ -7,12 +7,14 @@ import { ImportalasComponent } from './importalas/importalas.component';
 import { HelsinkiComponent } from './helsinki/helsinki.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
+import { TesztElemComponent } from './teszt-elem/teszt-elem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImportalasComponent,
-    HelsinkiComponent
+    HelsinkiComponent,
+    TesztElemComponent
   ],
   imports: [
     BrowserModule,
